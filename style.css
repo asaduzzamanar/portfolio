@@ -1,0 +1,604 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+.header_area{
+    width: 100%;
+    height: 10vh;
+    position: fixed;
+    background: white;
+    z-index: 999;
+    display: flex;
+    border-bottom: 1px solid rgb(241, 237, 237);
+}
+.header_area .sticky{
+    background: white;
+    padding: 30px 0px;
+}
+.header_area .port-area{
+    width: 300px;
+    height: 100%;
+    margin-left: 10%;
+}
+.header_area .port-area .port-logo{
+    font-size: 30px;
+    color: aqua;
+    font-weight: bold;
+    padding: 10px;
+    font-family: 'Quintessential', cursive;
+}
+.header_area .port-area .port-logo span{
+    color: rgb(224, 83, 130);
+}
+.header_area #nav-check:focus ~ .nav-togglor{
+    box-shadow: 0px 0px 10px rgb(224, 83, 130);
+}
+.header_area .nav-area #nav-check{
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+}
+.header_area .nav-area .nav-togglor{
+    width: 40px;
+    height: 30px;
+    border: 1px solid rgb(224, 83, 130);
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.3%;
+}
+.header_area .nav-area .nav-togglor span{
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: rgb(224, 83, 130);
+    position: relative;
+}
+.header_area .nav-area #nav-check:checked ~ .nav-togglor span{
+    background-color: transparent;
+}
+.header_area .nav-area .nav-togglor span::before,
+.header_area .nav-area .nav-togglor span::after{
+    content: '';
+    position: absolute;
+    top: 0; 
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(224, 83, 130);
+}
+.header_area .nav-area .nav-togglor span::before{
+    transform: translateY(-6px);
+}
+.header_area .nav-area #nav-check:checked ~ .nav-togglor span::before{
+    transform: rotate(45deg);
+}
+.header_area .nav-area .nav-togglor span::after{
+    transform: translateY(6px);
+}
+.header_area .nav-area #nav-check:checked ~ .nav-togglor span::after{
+    transform: rotate(-45deg);
+}
+.nav-area{
+    width: 800px;
+    height: 100%;
+}
+.nav-area .nav-links{
+    list-style: none;
+    display: flex;
+    float: right;
+    position: relative;
+}
+.nav-area .nav-links li{
+    padding: 22px;
+    float: right;
+}
+.nav-area .nav-links li a{
+    text-decoration: none;
+    color: rgb(224, 83, 130);
+    font-weight: bold;
+    font-family: 'Quintessential', cursive;
+}
+.active{
+    width: 20%;
+    height: 30px;
+    background: aqua;
+    left: 0;
+    top: 28%;
+    display: none;
+    position: absolute;
+    z-index: -1;
+    border-radius: 6px;
+    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4);
+    transition: left 0.3s;
+}
+.nav-links li:hover a{
+    color: white;
+    transition: 0.3s;
+}
+.nav-links li:hover ~ .active{
+    display: block;
+}
+.nav-links li:nth-child(1):hover ~ .active{
+    left: -0.8%;
+}
+.nav-links li:nth-child(2):hover ~ .active{
+    left: 18%;
+}
+.nav-links li:nth-child(3):hover ~ .active{
+    left: 38%;
+}
+.nav-links li:nth-child(4):hover ~ .active{
+    left: 60%;
+}
+.nav-links li:nth-child(5):hover ~ .active{
+    left: 79%;
+}
+.section-top{
+    background-image: url(image/header-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120vh;
+}
+.text-area{
+    width: 43%;
+    float: left;
+    margin-left: 12%;
+    padding-left: 2%;
+}
+.text-area h1{
+    padding-top: 42%;
+    color: rgb(78, 76, 76);
+    font-family: 'Quintessential', cursive;
+}
+.anim-text{
+    width: 400px;
+    height: 70px;
+}
+.anim-text{
+    position: relative;
+    display: block;
+    padding-top: 10px;
+    font-size: 45px;
+    font-family: 'Supermercado One', cursive;
+    font-weight: bold;
+}
+.anim-text::before{
+    content: attr(data-text);
+    position: absolute;
+    top: o;
+    left: 0;
+    width: 0;
+    height: 100%;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid aqua;
+    overflow: hidden;
+    background: linear-gradient(50deg, aqua, rgb(224, 83, 130));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: anim 6s linear infinite;
+}
+@keyframes anim {
+    0%,10%,100%{
+        width: 0%;
+    }
+    70%,90%{
+        width: 100%;
+    }
+    
+}
+.text-area p{
+    font-size: 18px;
+    line-height: 25px;
+    font-family: 'Neonderthaw', cursive;
+    color: rgb(148, 146, 144);
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+.text-area .button{
+    padding: 9px 30px;
+    font-weight: bold;
+    background: linear-gradient(45deg, aqua, rgb(224, 83, 130));
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.text-area .button:hover{
+    background: none;
+    color: aqua;
+    border: 1px solid aqua;
+}
+.text-area .button a{
+    text-decoration: none;
+    color: white;
+}
+.image-area{
+    width: 40%;
+    float: left;
+    padding-top: 9%;
+}
+.image-area img{
+    width: 530px;
+    height: 520px;
+}
+.section-biography{
+    background-image: url(image/biography-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 120vh;
+}
+.bio-image-area{
+    width: 40%;
+    float: left;
+    padding-top: 8%;
+    margin-left: 10%;
+}
+.bio-image-area img{
+    width: 530px;
+    height: 530px;
+}
+.bio-text-area{
+    width: 45%;
+    float: left;
+    padding-left: 2%;
+}
+.bio-text-area h1{
+    padding-top: 35%;
+    font-size: 40px;
+    color: rgb(224, 83, 130);
+    font-family: 'Bebas Neue', cursive;
+    width: 190px;
+}
+.bio-text-area .sub-text{
+    margin-top: -1%;
+    margin-left: 1%;
+    color: aqua;
+    font-size: 18px;
+}
+.bio-text-area p{
+    margin-top: 0%;
+    font-size: 16px;
+    line-height: 25px;
+    font-family: 'Neonderthaw', cursive;
+    color: rgb(148, 146, 144);
+    padding-bottom: 40px;
+}
+.bio-text-area button{
+    font-size: 18px;
+    padding: 8px 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(40deg, rgb(224, 83, 130), orange);
+}
+.bio-text-area button:hover{
+    background: none;
+    border: 1px solid rgb(224, 83, 130);
+    color: rgb(224, 83, 130);
+    transition: 0.3s;
+}
+.section-services{
+    background-image: url(image/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 110vh;
+}
+.services-text{
+    width: 145px;
+    margin: auto;
+    margin-top: 5%;
+}
+.services-text h1{
+    font-size: 35px;
+    font-family: 'Neonderthaw', cursive;
+    font-weight: bold;
+    color: rgb(224, 83, 130);
+}
+.services-text .sub-text{
+    margin-top: -5%;
+    color: aqua;
+    font-size: 15px;
+    font-family: 'Bebas Neue', cursive;
+}
+.ser-box{
+    width: 280px;
+    height: 400px;
+    border-radius: 5px;
+    float: left;
+    margin-top: 5%;
+    margin-left: 10.5%;
+    background: white;
+    margin-right: -2%;
+    padding: 10px;
+    border: 2px solid rgb(224, 83, 130);
+    box-shadow: 10px 10px 40px rgb(228, 225, 225);
+}
+.ser-box:hover{
+    border: none;
+    background: #ff5200;
+    transition: 0.5s;
+}
+.ser-box:hover .ser-title h2 {
+    color: white;
+}
+.ser-box:hover .ser-pera p{
+    color: white;
+}
+.ser-box .ser-title h2{
+    text-align: center;
+    font-family: 'Neonderthaw', cursive;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 15%;
+    margin-bottom: 10%;
+    color: rgb(224, 83, 130);
+}
+.ser-box .ser-pera p{
+    text-align: center;
+    font-family: 'Neonderthaw', cursive;
+    color: rgb(117, 114, 114);
+    margin-bottom: 12%;
+}
+.ser-icon{
+    text-align: center;
+    margin-top: 15%;
+    font-size: 50px;
+    color: rgb(224, 83, 130);
+    font-weight: bold;
+}
+.ser-box:hover .ser-icon{
+    color: white;
+}
+.ser-link{
+    text-align: center;
+}
+.ser-link a{
+    text-decoration: none;
+    color: rgb(224, 83, 130);
+    font-weight: bold;
+}
+.ser-box:hover a{
+    color: white;
+}
+.ser-box .ser-link:hover{
+    color: white;
+}
+.team-section{
+    background-image: url(image/latest-work-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.team-text-area{
+    margin: auto;
+    width: 150px;
+    text-align: center;
+}
+.team-text{
+    margin-top: 35%;
+    font-size: 30px; 
+    color: rgb(224, 83, 130);
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+.team-text-area .sub-text{
+    margin-top: -4%;
+    color: aqua;
+    font-size: 16px;
+    font-family: 'Bebas Neue', cursive;
+}
+.team-area{
+    margin-top: 2%;
+    margin-left: 3%;
+}
+.team-mum{
+    width: 260px;
+    height: 50vh;
+    border-radius: 5px;
+    float: left;
+    margin-top: 5%;
+    margin-left: 11%;
+    background: white;
+    margin-right: -2%;
+    padding: 10px;
+    border: 2px solid rgb(224, 83, 130);
+    box-shadow: 10px 10px 40px rgb(228, 225, 225);
+}
+.team-mum-img{
+    width: 120px;
+    height: 120px;
+    margin: auto;
+}
+.team-mum-img img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid rgb(224, 83, 130);
+    margin-top: 25%;
+}
+.team-mum-nam{
+    text-align: center;
+    margin-top: 14%;
+    color: rgb(224, 83, 130);
+    font-family: 'Bebas Neue', cursive;
+}
+.team-mum-bio{
+    text-align: center;
+    margin-top: 3%;
+    color: rgb(87, 85, 85);
+    font-family: 'Bebas Neue', cursive;
+}
+.team-mum:hover{
+    background: #ff5200;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.team-mum:hover h2{
+    color: aqua;
+    transition: 0.5s;
+}
+.team-mum:hover p{
+    color: white;
+    transition: 0.5s;
+}
+.team-mum:hover .team-mum-img img{
+    border: 3px solid aqua;
+}
+.contact-section{
+    background-image: url(image/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+.contact-text{
+    margin: auto;
+    font-size: 25px;
+    color: rgb(68, 66, 66);
+    width: 140px;
+}
+.contact-text h1{
+    margin-top: 35%;
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(224, 83, 130);
+}
+.contact-text .sub-text{
+    margin-left: 2%;
+    margin-top: -8%;
+    color: aqua;
+    font-size: 16px;
+    font-family: 'Bebas Neue', cursive;
+}
+.cop-area{
+    margin-top: 3%;
+    text-align: center;
+    line-height: 35px;
+    font-family: 'Bebas Neue', cursive;
+}
+.cop-area h2{
+    color: rgb(224, 83, 130);
+}
+.cop-area h4{
+    color: aqua;
+}
+.lorem-text p{
+    margin-top: 1%;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    color: rgb(68, 66, 66);
+}
+.contect-area{
+    margin: auto;
+    width: 700px;
+    margin-top: 3%;
+    padding: 50px 0px;
+    border-radius: 5px;
+    background: linear-gradient(-60deg, aqua, rgb(224, 83, 130));
+    
+}
+.contect-area p{
+    text-align: center;
+    line-height: 50px;
+    color: rgb(235, 231, 231);
+    font-size: 18px;
+    font-family: 'Bebas Neue', cursive;
+}
+.contect-area span{
+    font-size: 30px;
+    color: white;
+}
+footer p{
+    text-align: center;
+    margin-bottom: 2%;
+    color: rgb(134, 130, 130);
+}
+
+@media (max-width: 991px){
+    .header_area .nav-area .nav-togglor{
+        display: flex;
+        float: right;
+        margin-top: 3%;
+        margin-right: 5%;
+    }
+    .nav-area .nav-links{
+        width: 100%;
+        position: absolute;
+        background: #383d52;
+        top: 100%;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        
+    }
+    .header_area .nav-area #nav-check:checked ~ .nav-links{
+        visibility: visible;
+        opacity: 1;
+    }
+    .section-top{
+        height: 200vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+    .text-area{
+        margin-top: -15%;
+        width: 100%;
+    }
+    .text-area p{
+        padding-right: 5%;
+        width: 90%;
+    }
+    .image-area{
+        width: 100%;
+        text-align: center;
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+    .section-biography{
+        height: 160vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+    .bio-image-area{
+        width: 100%;
+    }
+    .bio-text-area{
+        width: 100%;
+        margin-top: -30%;
+        margin-left: 10%;
+    }
+    .bio-text-area p{
+        padding-right: 5%;
+        width: 90%;
+    }
+    .section-services{
+        height: 190vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+    .ser-box{
+        margin-top: 10%;
+    }
+    .team-section{
+        height: 150vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+}
+@media only screen and (max-width: 767px){
+    
+}
+@media only screen and (max-width: 575px){
+    
+}

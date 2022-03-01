@@ -9,6 +9,9 @@ html{
 body{
     font-family: 'Open Sans', sans-serif;
 }
+
+/*header-area-start*/
+
 .header_area{
     width: 100%;
     height: 10vh;
@@ -18,10 +21,7 @@ body{
     display: flex;
     border-bottom: 1px solid rgb(241, 237, 237);
 }
-.header_area .sticky{
-    background: white;
-    padding: 30px 0px;
-}
+
 .header_area .port-area{
     width: 300px;
     height: 100%;
@@ -88,6 +88,9 @@ body{
 .header_area .nav-area #nav-check:checked ~ .nav-togglor span::after{
     transform: rotate(-45deg);
 }
+
+/*nav-start*/
+
 .nav-area{
     width: 800px;
     height: 100%;
@@ -143,6 +146,12 @@ body{
 .nav-links li:nth-child(5):hover ~ .active{
     left: 79%;
 }
+/*nav-end*/
+
+/*header-area-end*/
+
+/*top-section-start*/
+
 .section-top{
     background-image: url(image/header-bg.png);
     background-repeat: no-repeat;
@@ -233,6 +242,11 @@ body{
     width: 530px;
     height: 520px;
 }
+
+/*top-section-end*/
+
+/*about-section-start*/
+
 .section-biography{
     background-image: url(image/biography-bg.png);
     background-repeat: no-repeat;
@@ -290,6 +304,11 @@ body{
     color: rgb(224, 83, 130);
     transition: 0.3s;
 }
+
+/*about-section-end*/
+
+/*services-section-start*/
+
 .section-services{
     background-image: url(image/footer-bg.png);
     background-repeat: no-repeat;
@@ -376,6 +395,11 @@ body{
 .ser-box .ser-link:hover{
     color: white;
 }
+
+/*services-section-end*/
+
+/*team-section-start*/
+
 .team-section{
     background-image: url(image/latest-work-bg.png);
     background-repeat: no-repeat;
@@ -458,12 +482,36 @@ body{
 .team-mum:hover .team-mum-img img{
     border: 3px solid aqua;
 }
+
+/*services-section-end*/
+
+/*contact-section-start*/
+
 .contact-section{
     background-image: url(image/footer-bg.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    padding-top: 25px;
 }
+.contact-main-area{
+    width: 80%;
+    height: 80vh;
+    align-items: center;
+    margin: auto;
+    
+}
+.contact-address-area{
+    width: 45%;
+    height: 70vh;
+    float: left;
+    margin-top: 2%;
+    margin-left: 2%;
+    margin-right: 3%;
+    padding: 10px;
+    font-family: 'Bebas Neue', cursive;
+}
+
 .contact-text{
     margin: auto;
     font-size: 25px;
@@ -483,23 +531,53 @@ body{
     font-family: 'Bebas Neue', cursive;
 }
 .cop-area{
-    margin-top: 3%;
-    text-align: center;
-    line-height: 35px;
-    font-family: 'Bebas Neue', cursive;
+    width: 100%;
+    padding: 15px 0px;
 }
 .cop-area h2{
     color: rgb(224, 83, 130);
+    border-bottom: 1px solid aqua;
+    width: 80%;
+}
+.cop-area p{
+    color: #8f9092;
+    margin-top: 8px;
 }
 .cop-area h4{
     color: aqua;
-}
-.lorem-text p{
-    margin-top: 1%;
     font-size: 18px;
-    text-align: center;
-    font-family: 'Bebas Neue', cursive;
-    color: rgb(68, 66, 66);
+}
+.address{
+    margin-top: 35px;
+}
+.address .name-bar{
+    width: 14%;
+    float: left;
+    height: 10vh;
+}
+.address .name-bar i{
+    font-size: 30px;
+    padding: 8px;
+    color: rgb(224, 83, 130);
+}
+.address .name{
+    width: 300px;
+    height: 10vh;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(224, 83, 130);
+}
+.address .name span{
+    color: rgb(136, 134, 134);
+}
+.contact-address-area .message-text{
+    width: 80%;
+    padding: 15px 0px;
+}
+.contact-address-area h2{
+    color: rgb(224, 83, 130);
+    border-bottom: 1px solid aqua;
 }
 .contect-area{
     margin: auto;
@@ -521,11 +599,107 @@ body{
     font-size: 30px;
     color: white;
 }
+.mess-from{
+    margin-top: 5%;
+}
+
+.mess-from .name{
+    width: 47%;
+    height: 5.5vh;
+    padding: 2px 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+    outline: none;
+    background: white;
+    border: 1px solid rgb(224, 83, 130);
+    font-family: 'Bebas Neue', cursive;
+}
+.mess-from .name:hover{
+    border: 1px solid aqua;
+}
+.mess-from .email{
+    margin-top: 30px;
+    width: 98%;
+    padding: 2px 8px;
+    height: 5.5vh;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(224, 83, 130);
+    background: white;
+    font-family: 'Bebas Neue', cursive;
+}
+.mess-from .email:hover{
+    border: 1px solid aqua;
+}
+.mess-from .text-box{
+    margin-top: 30px;
+    width: 98%;
+    height: 10vh;
+    padding: 5px 8px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid rgb(224, 83, 130);
+    background: white;
+    font-family: 'Bebas Neue', cursive;
+}
+.mess-from .text-box:hover{
+    border: 1px solid aqua;
+}
+.mess-from .button{
+    margin-top: 30px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    background: rgb(224, 83, 130);
+    color: white;
+    outline: none;
+    border: none;
+}
+.mess-from .button:hover{
+    background: none;
+    border: 1px solid rgb(224, 83, 130);
+    color: rgb(224, 83, 130);
+    cursor: pointer;
+}
+
+/*contact-section-end*/
+
 footer p{
     text-align: center;
     margin-bottom: 2%;
     color: rgb(134, 130, 130);
 }
+.scrol-up-section{
+    width: 50px;
+    height: 50px;
+    float: right;
+    z-index: 999;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.scrol-up-btn{
+    width: 35px;
+    height: 35px;
+    background: aqua;
+    text-align: center;
+    border-radius: 5px;
+}
+.scrol-up-btn i{
+    margin-top: 20%;
+    font-size: 20px;
+    color: rgb(224, 83, 130);
+}
+.scrol-up-btn i:hover{
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+
 
 @media (max-width: 991px){
     .header_area .nav-area .nav-togglor{
@@ -595,9 +769,97 @@ footer p{
         height: 150vh;
         border-bottom: 1px solid #ede4e4;
     }
+    .contact-section{
+        height: 180vh;
+    }
+    .contact-main-area{
+        float: none;
+    }
+    .contact-address-area{
+        float: none;
+        width: 75%;
+        margin: auto;
+    }
 }
 @media only screen and (max-width: 767px){
-    
+    .header_area .nav-area .nav-togglor{
+        display: flex;
+        float: right;
+        margin-top: 3%;
+        margin-right: 5%;
+    }
+    .nav-area .nav-links{
+        width: 100%;
+        position: absolute;
+        background: #383d52;
+        top: 100%;
+        left: 0;
+        visibility: hidden;
+        opacity: 0;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        
+    }
+    .header_area .nav-area #nav-check:checked ~ .nav-links{
+        visibility: visible;
+        opacity: 1;
+    }
+    .section-top{
+        height: 200vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+    .text-area{
+        margin-top: -15%;
+        width: 100%;
+    }
+    .text-area p{
+        padding-right: 5%;
+        width: 90%;
+    }
+    .image-area{
+        width: 100%;
+        text-align: center;
+        margin-top: 10%;
+        margin-left: 10%;
+    }
+    .section-biography{
+        height: 160vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+    .bio-image-area{
+        width: 100%;
+    }
+    .bio-text-area{
+        width: 100%;
+        margin-top: -30%;
+        margin-left: 10%;
+    }
+    .bio-text-area p{
+        padding-right: 5%;
+        width: 90%;
+    }
+    .section-services{
+        height: 190vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+    .ser-box{
+        margin-top: 10%;
+    }
+    .team-section{
+        height: 150vh;
+        border-bottom: 1px solid #ede4e4;
+    }
+    .contact-section{
+        height: 180vh;
+    }
+    .contact-main-area{
+        float: none;
+    }
+    .contact-address-area{
+        float: none;
+        width: 75%;
+        margin: auto;
+    }
 }
 @media only screen and (max-width: 575px){
     
